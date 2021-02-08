@@ -1,0 +1,20 @@
+version: '3.8'
+services:
+  # app:
+  #   build: .
+  #   image: pokemon-stats
+  #   command:
+  #     npm run mocha
+  #   links:
+  #     - db
+  db:
+    image: mongo:4.4.3-bionic
+    environment:
+      MONGO_INITDB_DATABASE: pokemon-stats-db
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: password
+    ports:
+      - 27017-27019:27017-27019
+    volumes:
+      - ./mongo-data:/data/db
+      - ./init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js:ro
