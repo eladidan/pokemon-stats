@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 const _ = require('lodash');
-const pokemon = require('pokemon');
+const randomPokemon = require('pokemon').random;
 const Promise = require('bluebird');
 
 const pokeApi = require('../lib/pokeApi');
@@ -10,7 +10,7 @@ const Pokemon = require('../model/pokemon');
 function randomPokemonNames(n) {
     const pokemonNames = new Set();
     while (pokemonNames.size < n) {
-        const pokemonName = pokemon.random();
+        const pokemonName = randomPokemon();
         pokemonNames.add(_.lowerCase(pokemonName));
     }
 

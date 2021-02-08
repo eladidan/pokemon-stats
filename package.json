@@ -6,7 +6,8 @@
   "scripts": {
     "mocha": "mocha --forbid-only \\\"test/**/*.test.js\\\"",
     "start": "NODE_ENV=development node index.js",
-    "test": "docker-compose up --build"
+    "test": "docker-compose up --build",
+    "lint": "eslint ."
   },
   "repository": {
     "type": "git",
@@ -37,6 +38,11 @@
   "devDependencies": {
     "chai": "^4.3.0",
     "dotenv": "^8.2.0",
+    "eslint": "^7.19.0",
+    "eslint-config-standard": "^16.0.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
     "fancy-test": "^1.4.10",
     "mocha": "^8.2.1"
   }
